@@ -13,11 +13,18 @@ import reportWebVitals from './reportWebVitals';
 // );
 
 
-import BlogJsonPage from './pages/state/BlogJsonPage';
+// import BlogJsonPage from './pages/state/BlogJsonPage';
+
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(
+// <BlogJsonPage />
+// );
+
+import EventPage from './pages/event/EventPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-<BlogJsonPage />
+<EventPage />
 );
 
 
