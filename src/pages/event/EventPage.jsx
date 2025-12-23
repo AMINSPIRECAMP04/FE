@@ -4,12 +4,26 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 const EventPage = () => {
 
+    const handler = (id, pwd) => {
+        console.log('>>>>>> handler call', id, pwd)
+    }
+
+    const id = 'jslim';
+    const pwd = 'jslim';
+
     return(
 
         <div> 
-            <Button variant='primary'>login</Button>
+            <div>
+            <label>아이디</label>
+            <input
+            typr="text"
+            placeholder='아이디를 입력하세요'/>
+            </div>
+            <Button variant='primary' onClick = { () => handler()} >login</Button>
 
         </div>
+        //리액트안에서 폼을 만든다면 리액트에 의해 제어가 되어야 한다. 입력된 값과 ~~가 싱크되어서 실시간으로 동기화가 되어야 한다.
         //리턴 안에서 스크립트를 하기 위해선 중괄호쓰면 됨 {}
     )
 }
