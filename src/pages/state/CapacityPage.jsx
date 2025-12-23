@@ -22,13 +22,23 @@ reactive state 상태를 관리할 예정(증가 버튼 클릭시 입장 인원�
 
 핸들러안에 스크립트형식이기때문에 화살표 ㅎ함수를 써야한다?
 또는 핸들러를 직접적으로 호출한다.
+
+디스에이블이 프롭스에 의해 변경이 된다? 
+
+페이지 로딩하는것도 통신이다
+json을 내려받고..
+로딩을 해보고싶다..
+json서버 사용 방법 배울거다
+추후엔 json서버의 역할을 스프링이 담당해줄것이다.
 */
 
 
 const CapacityPage = () => {
 
-    const capacity = 10;
+    const capacity = 10; //최대 입장인원 변수
     const [cnt, setCnt] = useState(0);
+    const [full, setFull] = useState(false)
+    const [empty, setEmpty] = useState(false)
 
     const upCntHandler = () => {
         console.log(">>>> upCntHandler call")
@@ -46,7 +56,8 @@ const CapacityPage = () => {
     useEffect( () => {
         console.log(">>>> useEffect call")
         console.log(">>> cnt " , cnt);
-        setFull( cnt >= capacity)
+        setFull( cnt >= capacity);
+        setEmpty( cnt <= 0);
     }, [cnt]);
 
 
@@ -55,8 +66,10 @@ const CapacityPage = () => {
             <p>
                 입장인원: {cnt}
             </p>
-            <Button title="입장" onClick={ () => upCntHandler()}/>
-            <Button title="퇴장" onClick={ () => downCntHandler()}/>
+            <Button title="입장" onClick={ () => upCntHandler()}
+                disabled={full}/>
+            <Button title="퇴장" onClick={ () => downCntHandler()}
+                disabled={empty}/>
                 {
                     full && <p style={{color: "red"}}> 정원이 가득찼습니다.</p>
                 }

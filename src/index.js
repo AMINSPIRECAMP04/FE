@@ -5,12 +5,21 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 
-import CapacityPage from './pages/state/CapacityPage';
+// import CapacityPage from './pages/state/CapacityPage';
+
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(
+// <CapacityPage />
+// );
+
+
+import BlogJsonPage from './pages/state/BlogJsonPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-<CapacityPage />
+<BlogJsonPage />
 );
+
 
 
 
