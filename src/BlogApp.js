@@ -1,7 +1,7 @@
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import styled from 'styled-components';
 import SignIn from './feature/user/signin';
-import SignUp from './feature/user/sigup';
+import SignUp from './feature/user/signup';
 
 const TitleDiv = styled.p`
 font-size: 24px;
