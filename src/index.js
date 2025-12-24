@@ -27,11 +27,19 @@ import reportWebVitals from './reportWebVitals';
 // <EventPage />
 // );
 
-import UserPage from './pages/rendering/UserPage';
+// import UserPage from './pages/rendering/UserPage';
+
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(
+// <UserPage />
+// );
+
+
+import BlogApp from './BlogApp';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-<UserPage />
+<BlogApp />
 );
 
 
