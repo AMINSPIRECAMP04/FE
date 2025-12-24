@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Placeholder } from "react-bootstrap";
 import styled from "styled-components";
 import api from "../../api/axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 // Container
 const Container = styled.div`
@@ -159,7 +159,7 @@ const SignIn = () => {
                         <Button type="submit">로그인</Button>
                 </form>
                 <TextLink> 비밀번호를 잊으셨나요? </TextLink>
-                <TextLink> 회원가입햣 </TextLink>
+                <TextLink as={Link} to="/">회원가입</TextLink>
 
             </FormWrapper>
         </Container>

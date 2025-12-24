@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import api from "../../api/axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+
+//Link를 써야 컴포지션 트랜지션이 됨.. 앵커?를 쓰면 안됨
 
 // Container
 const Container = styled.div`
@@ -161,10 +163,14 @@ const SignUp = () => {
                         placeholder="password" />
                         <Button type="submit">가입하기</Button>
                 </form>
-                <TextLink>로그인</TextLink>
+                <TextLink as={Link} to="/login">로그인</TextLink>
+                
             </FormWrapper>
         </Container>
     )
 }
+
+
+// <TextLink as={Link} to="/login">로그인</TextLink> 이렇게 해서 컴포지션 트랜지션 구현
 
 export default SignUp
