@@ -64,6 +64,19 @@ const Button = styled.button`
     background-color: #aaa;
     cursor: not-allowed;
   }
+`
+
+// Link
+const TextLink = styled.p`
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+  color: #007bff;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 const SignUp = () => {
@@ -147,8 +160,8 @@ const SignUp = () => {
                         onChange={handlerChange}
                         placeholder="password" />
                         <Button type="submit">가입하기</Button>
-                        <Button type="button">로그인페이지이동</Button>
                 </form>
+                <TextLink>로그인</TextLink>
             </FormWrapper>
         </Container>
     )

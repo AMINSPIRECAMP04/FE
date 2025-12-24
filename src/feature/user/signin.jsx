@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Placeholder } from "react-bootstrap";
 import styled from "styled-components";
+import api from "../../api/axios";
+import { useNavigate } from "react-router-dom";
 
 // Container
 const Container = styled.div`
@@ -79,23 +81,85 @@ const TextLink = styled.p`
 `;
 
 const SignIn = () => {
+
+    const [form, setForm] = useState({
+        email : '',
+        password: ''
+    })
+    const moveUrl = useNavigate();
+
+    const handleChange = (e) => {
+        const {name, value} = e.target;
+
+        //기존값을 유지하면서 현재 입력된 필드에 대한 업데이트
+        setForm({...form, [name] : value })
+
+    }
+
+    
+    const handlerSubmit =async (e) => {
+
+        e.preventDefault(); //이벤트 버블링 방지
+
+        console.log(">>>> signin submit call")
+
+        try{
+
+            const response = await api.get("/users", {
+                params: {
+                email : form.email ,
+                password : form.password,
+                },
+            });
+
+            console.log(">>>> axios success : " , response );
+            moveUrl("/")
+        } catch (err) {
+            console.log(">>>> axios err : " , err )
+        }
+
+        /*
+        쿼리스트링
+        api.get(/users?email=${}&password=${}`)
+
+        실무 권장 방식
+        api.get(`users` , {
+        params : {
+        email : xxxxx,
+        password : xxxxx
+        }
+        }
+        )
+        */
+
+
+
+
+    }
     return(
         <Container>
             <FormWrapper>
                 <Title>로그인</Title>
-                <form>
+                <form onSubmit={handlerSubmit}>
                     <Input
                         type="email"
                         name="email"
-                        Placeholder="email" />
+                        //실시간 싱크가 되어야 하므로 여기에 value랑 onChange 추가한다.
+                        value={form.email}
+                        onChange={handleChange}
+                        placeholder="email" 
+                        />
                         <Input
                         type="password"
                         name="password"
-                        Placeholder="password" />
+                        value={form.password}
+                        onChange={handleChange}
+                        placeholder="password"
+                         />
                         <Button type="submit">로그인</Button>
                 </form>
                 <TextLink> 비밀번호를 잊으셨나요? </TextLink>
-                <TextLink> 회원가입 </TextLink>
+                <TextLink> 회원가입햣 </TextLink>
 
             </FormWrapper>
         </Container>
