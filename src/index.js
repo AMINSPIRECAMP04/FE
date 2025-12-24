@@ -20,13 +20,19 @@ import reportWebVitals from './reportWebVitals';
 // <BlogJsonPage />
 // );
 
-import EventPage from './pages/event/EventPage';
+// import EventPage from './pages/event/EventPage';
+
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(
+// <EventPage />
+// );
+
+import UserPage from './pages/rendering/UserPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-<EventPage />
+<UserPage />
 );
-
 
 
 
