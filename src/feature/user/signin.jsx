@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Placeholder } from "react-bootstrap";
 import styled from "styled-components";
 
 // Container
@@ -79,9 +80,25 @@ const TextLink = styled.p`
 
 const SignIn = () => {
     return(
-        <div>
-            로그인페이지
-        </div>
+        <Container>
+            <FormWrapper>
+                <Title>로그인</Title>
+                <form>
+                    <Input
+                        type="email"
+                        name="email"
+                        Placeholder="email" />
+                        <Input
+                        type="password"
+                        name="password"
+                        Placeholder="password" />
+                        <Button type="submit">로그인</Button>
+                </form>
+                <TextLink> 비밀번호를 잊으셨나요? </TextLink>
+                <TextLink> 회원가입 </TextLink>
+
+            </FormWrapper>
+        </Container>
     )
 }
 
