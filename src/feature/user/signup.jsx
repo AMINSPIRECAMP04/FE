@@ -83,6 +83,7 @@ const SignUp = () => {
                         name="password"
                         plachole="password" />
                         <Button type="submit">가입하기</Button>
+                        <Button type="button">로그인페이지</Button>
                 </form>
             </FormWrapper>
         </Container>
