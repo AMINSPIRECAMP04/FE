@@ -1,15 +1,22 @@
 {
-    "blogs" : [
-        {
-            "id" : 1,
-            "title" : " 오늘은 학습 곡선이 높다..",
-            "content" : "네 그러네요..."
-        },
-
-        {
-            "id" : 2,
-            "title" : " spa 기반 리액트",
-            "content" : "문법이 생소하다~ axios를 통해 통신하는 그거임. DB 서버도 기동해줘야함"
-        }
-    ]
+  "blogs": [
+    {
+      "id": "1",
+      "title": " 오늘은 학습 곡선이 높다..",
+      "content": "네 그러네요..."
+    },
+    {
+      "id": "2",
+      "title": " spa 기반 리액트",
+      "content": "문법이 생소하다~ axios를 통해 통신하는 그거임. DB 서버도 기동해줘야함"
+    }
+  ],
+  "users": [
+    {
+      "id": "959d",
+      "name": "ㅁㄴㅇㅁㄴㅇ",
+      "email": "asd@naver.com",
+      "password": "asd"
+    }
+  ]
 }
